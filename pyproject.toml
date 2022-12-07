@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "sklearn-api-deploy"
+version = "0.1.0"
+description = "A quick POC on creating an sklearn model and deploying it via a FastAPI server."
+authors = ["Ethan Swan <ethanpswan@gmail.com>"]
+readme = "README.md"
+packages = [{include = "sklearn_api_deploy"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+scikit-learn = "^1.1.3"
+fastapi = "^0.88.0"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^3.5.1"
+ipython = "^8.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
