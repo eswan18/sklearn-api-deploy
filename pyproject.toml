@@ -13,7 +13,6 @@ fastapi = "^0.88.0"
 pandas = "^1.5.2"
 uvicorn = {extras = ["standard"], version = "^0.20.0"}
 
-
 [tool.poetry.group.dev.dependencies]
 jupyterlab = "^3.5.1"
 ipython = "^8.7.0"
