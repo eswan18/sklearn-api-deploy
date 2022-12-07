@@ -1,6 +1,6 @@
 # sklearn-api-deploy
 
-A quick POC on creating an sklearn model and deploying it via a FastAPI server.
+A quick POC of deploying an sklearn model in a FastAPI server.
 
 ## Running the API Server
 
