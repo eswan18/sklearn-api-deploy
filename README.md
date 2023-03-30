@@ -9,7 +9,7 @@ Our goal is to create a model to predict the type of flower based on the measure
 
 This turns out to be very easy, but I chose this dataset because:
 1. It has relatively few features. Our goal here is to see how to deploy a model behind an API -- and having many features, while more realistic, just means more code to write without any additional educational value.
-2. It doesn't require feature engineering. Again, this is probably a little bit unrealstic, but allows us to avoid writing code that's unrelated to the model deployment process.
+2. It doesn't require feature engineering. Again, this is a little bit unrealistic, but allows us to avoid writing code that's unrelated to the model deployment process.
 
 I may include a more complex example in the future, for reference purposes.
 
@@ -18,13 +18,14 @@ I may include a more complex example in the future, for reference purposes.
 I've pretrained a linear regression model and stored it in Dropbox.
 
 You can download it with [this link](https://www.dropbox.com/s/q0iek2hu43oz3c0/iris_regression.pickle?dl=0).
-If you want to verify its hash, to make sure it's the file you expect, before unpickling it, run:
+If you want to verify its hash, to make sure it's the file you expect before unpickling it, run:
 ```bash
 md5 iris_regression.pickle
 ```
 You should get an md5 hash of `ca76ff2631132e4ec5841a2b798534ca`.
 
 You can see how this model was trained in the `notebooks/train_model.ipynb` notebook.
+There's nothing interesting in there and it's not meant to follow best practice; it's just a quick and dirty way to get a model we can use in our API.
 
 ## The API
 
