@@ -8,8 +8,10 @@ We're using the Iris dataset, a very common example in data science.
 Our goal is to create a model to predict the type of flower based on the measurements of its petals and sepals.
 
 This turns out to be very easy, but I chose this dataset because:
-- It has relatively few features. Our goal here is to see how to deploy a model behind an API -- and having many features, while more realistic, just means more code to write without any additional educational value.
-- It doesn't require feature engineering. Again, this is probably a little bit unrealstic, but allows us to avoid writing code that's unrelated to the model deployment process.
+1. It has relatively few features. Our goal here is to see how to deploy a model behind an API -- and having many features, while more realistic, just means more code to write without any additional educational value.
+2. It doesn't require feature engineering. Again, this is probably a little bit unrealstic, but allows us to avoid writing code that's unrelated to the model deployment process.
+
+I may include a more complex example in the future, for reference purposes.
 
 ## The Model
 
