@@ -64,7 +64,7 @@ If the API server is running at `http://localhost:8000`, then the following shou
 
 ## Regenerating `requirements.txt`
 
-I use Poetry to manage this repository, but the individual app folders each have a `requirements.txt`. This is to avoid having to teach about Poetry as part of the talk, and to just have participants set up a simple virtual environment.
+I use Poetry to manage this repository as a whole, but the individual app folders each have a `requirements.txt`. This is to avoid having to teach about Poetry as part of the talk, and to just have participants set up a simple virtual environment.
 
 To generate the `requirements.txt` from a poetry environment, use this line:
 
