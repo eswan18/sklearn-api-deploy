@@ -1,6 +1,11 @@
 # sklearn-api-deploy
 
-A quick POC of deploying a scikit-learn model with a FastAPI server.
+Code examples for my PyCon tutorial, *Building a Model Prediction Server*.
+
+## How This Repo Is Organized
+
+The tutorial is divided into four sections, and the code that we'll write in each section is captured in the corresponding `app-section-N` folder.
+That is, `app-section-2` contains the state of the project after we've finished sections 1 and 2 of the tutorial.
 
 ## The Dataset
 
@@ -34,6 +39,8 @@ To get start the application, run:
 ```
 uvicorn api.main:app --host 0.0.0.0 --port 8000
 ```
+
+Note that you'll need to be in a directory tha thas an `api` folder, so if you're using this repo you'll need to enter one of the subfolders first (e.g. `app-section-4`).
 
 ## Fetching Predictions
 
