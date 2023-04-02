@@ -25,7 +25,7 @@ def status():
     return "the API is up and running!"
 
 
-@app.post("/predict")
+@app.post("/predict", status_code=201)
 def predict(obs: Observation) -> Prediction:
     """Predict the flower type from the given observation."""
     output_class_array = model.predict(obs.as_dataframe())
@@ -37,7 +37,7 @@ def predict(obs: Observation) -> Prediction:
     return pred
 
 
-@app.post("/batch_predict")
+@app.post("/batch_predict", status_code=201)
 def batch_predict(batch: list[Observation]) -> list[Prediction]:
     """Predict the flower type for a batch of observations."""
     rows = [obs.as_row() for obs in batch]
