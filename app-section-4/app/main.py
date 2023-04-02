@@ -21,8 +21,8 @@ app = FastAPI()
 
 
 @app.get("/")
-def home():
-    return "the api is up and running!"
+def status():
+    return "the API is up and running!"
 
 
 @app.post("/predict")
