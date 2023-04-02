@@ -1,16 +1,12 @@
+from typing import Literal
+
 import pandas as pd
 from pydantic import BaseModel
-from enum import IntEnum
-
-
-class FlowerType(IntEnum):
-    setosa = 0
-    versicolour = 1
-    virginica = 2
 
 
 class Observation(BaseModel):
-    # For later parts of this code to work, the order of fields here needs to match the order they were listed in training.
+    # For later parts of this code to work, the order of fields here needs to match the
+    # order they were listed in training.
     sepal_length: float
     sepal_width: float
     petal_length: float
@@ -38,4 +34,4 @@ class Observation(BaseModel):
 
 
 class Prediction(BaseModel):
-    flower_type: FlowerType
+    flower_type: Literal["setosa", "versicolour", "virginica"]
