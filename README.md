@@ -40,7 +40,7 @@ To get start the application, run:
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
-Note that you'll need to be in a directory tha thas an `api` folder, so if you're using this repo you'll need to enter one of the subfolders first (e.g. `app-section-4`).
+Note that you'll need to be in a directory that thas an `api` folder, so if you're using this repo you'll need to enter one of the subfolders first (e.g. `app-section-4`).
 
 ## Fetching Predictions
 
