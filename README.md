@@ -37,7 +37,7 @@ There's nothing interesting in there and it's not meant to follow best practice;
 We deploy the model via a FastAPI server.
 To get start the application, run:
 ```
-uvicorn api.main:app --host 0.0.0.0 --port 8000
+uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
 Note that you'll need to be in a directory tha thas an `api` folder, so if you're using this repo you'll need to enter one of the subfolders first (e.g. `app-section-4`).
