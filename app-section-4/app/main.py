@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from fastapi import FastAPI
-from .pydantic_models import Observation, Prediction, FlowerType
+from .pydantic_models import Observation, Prediction
 
 MODEL_PATH = Path("./models/iris_regression.pickle")
 
@@ -32,7 +32,7 @@ def predict(obs: Observation) -> Prediction:
     print(output_class_array)
     # output_class_array is an array, but has only one element -- the prediction for our record.
     output_class = output_class_array[0]
-    flower_type = FlowerType(output_class)
+    flower_type = flower_type_from_class_num(output_class)
     pred = Prediction(flower_type=flower_type)
     return pred
 
@@ -44,7 +44,19 @@ def batch_predict(batch: list[Observation]) -> list[Prediction]:
     df = pd.DataFrame(rows)
     output_classes = model.predict(df)
     preds = [
-        Prediction(flower_type=FlowerType(output_class))
+        Prediction(flower_type=flower_type_from_class_num(output_class))
         for output_class in output_classes
     ]
     return preds
+
+
+def flower_type_from_class_num(class_num: int) -> str:
+    """Convert the class number to a flower type."""
+    if class_num == 0:
+        return "setosa"
+    elif class_num == 1:
+        return "versicolour"
+    elif class_num == 2:
+        return "virginica"
+    else:
+        raise ValueError(f"Unknown class number: {class_num}")
