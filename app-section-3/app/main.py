@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.pydantic_models import Observation, Prediction
+from .pydantic_models import Observation, Prediction
 
 
 app = FastAPI()
