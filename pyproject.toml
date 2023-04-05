@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "A quick POC on creating an sklearn model and deploying it via a FastAPI server."
 authors = ["Ethan Swan <ethanpswan@gmail.com>"]
 readme = "README.md"
-packages = [{include = "sklearn_api_deploy"}]
+#packages = [{include = "sklearn_api_deploy"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
