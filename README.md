@@ -7,6 +7,8 @@ Code examples for my PyCon tutorial, [*Building a Model Prediction Server*](http
 The tutorial is divided into four sections, and the code that we'll write in each section is captured in the corresponding `app-section-N` folder.
 That is, `app-section-2` contains the state of the project after we've finished sections 1 and 2 of the tutorial.
 
+Additionally, to make it easier to see what changes are made between each step, there are HTML files in the `diffs/` folder to illustrate the differences between each section. `diffs/1.html` shows the code we add in section 1, etc.
+
 ## The Dataset
 
 We're using the Iris dataset, a very common example in data science.
