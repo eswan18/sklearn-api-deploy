@@ -1,5 +1,6 @@
 import pickle
 from pathlib import Path
+from typing import List
 
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
@@ -39,7 +40,7 @@ def predict(obs: Observation) -> Prediction:
 
 
 @app.post("/batch_predict", status_code=201)
-def batch_predict(batch: list[Observation]) -> list[Prediction]:
+def batch_predict(batch: List[Observation]) -> List[Prediction]:
     """Predict the flower type for a batch of observations."""
     rows = [obs.as_row() for obs in batch]
     df = pd.DataFrame(rows)
