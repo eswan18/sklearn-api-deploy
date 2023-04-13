@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
         working-directory: ${{ matrix.app-dir }}
       - name: Test with pytest
-        if: ${{ matrix.python-version }} != "app-section-1"
+        if: ${{ matrix.app-dir }} != "app-section-1"
         run: |
           pip install pytest
           python -m pytest
