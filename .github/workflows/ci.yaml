@@ -2,8 +2,8 @@ name: Test
 
 on: [push]
 
-build:
-
+jobs:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
