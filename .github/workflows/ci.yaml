@@ -1,0 +1,26 @@
+name: Test
+
+on: [push]
+
+build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+        app-dir: ["app-section-1", "app-section-2", "app-section-3", "app-section-4"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: cd into section folder
+        run: cd ${{ matrics.app-dir }}
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Test with pytest
+        run: |
+          python -m pytest
