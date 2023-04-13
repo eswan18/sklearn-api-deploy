@@ -9,7 +9,7 @@ jobs:
       matrix:
         #python-version: ["3.8", "3.9", "3.10", "3.11"]
         python-version: ["3.8"]
-        app-dir: ["app-section-1", "app-section-2", "app-section-3", "app-section-4"]
+        app-dir: ['app-section-1', 'app-section-2', 'app-section-3', 'app-section-4']
 
     steps:
       - uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
           pip install -r requirements.txt
         working-directory: ${{ matrix.app-dir }}
       - name: Test with pytest
-        if: ${{ matrix.app-dir }} != "app-section-1"
+        if: matrix.app-dir != 'app-section-1'
         run: |
           pip install pytest
           python -m pytest
