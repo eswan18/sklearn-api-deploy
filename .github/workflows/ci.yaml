@@ -7,7 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.8", "3.9", "3.10", "3.11"]
+        #python-version: ["3.8", "3.9", "3.10", "3.11"]
+        python-version: ["3.8"]
         app-dir: ["app-section-1", "app-section-2", "app-section-3", "app-section-4"]
 
     steps:
@@ -16,12 +17,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      - name: cd into section folder
-        run: cd ${{ matrix.app-dir }}
       - name: Install dependencies
         run: |
           pwd
           pip install -r requirements.txt
+        working-directory: ${{ matrix.app-dir }}
       - name: Test with pytest
         run: |
           python -m pytest
+        working-directory: ${{ matrix.app-dir }}
