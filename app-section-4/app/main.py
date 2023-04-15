@@ -1,4 +1,5 @@
 import pickle
+import importlib
 from pathlib import Path
 from typing import List
 
@@ -7,17 +8,17 @@ from sklearn.linear_model import LogisticRegression
 from fastapi import FastAPI
 from .pydantic_models import Observation, Prediction
 
-MODEL_PATH = Path("./models/iris_regression.pickle")
+
+MODEL_NAME = "iris_regression.pickle"
 
 
-def load_model(path: Path) -> LogisticRegression:
-    with open(MODEL_PATH, "rb") as f:
+def load_model(model_name: str) -> LogisticRegression:
+    with importlib.resources.open_binary("app.models", model_name) as f:
         model = pickle.load(f)
     return model
 
 
-model = load_model(MODEL_PATH)
-
+model = load_model(MODEL_NAME)
 app = FastAPI()
 
 
