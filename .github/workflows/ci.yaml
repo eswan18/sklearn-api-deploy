@@ -24,7 +24,7 @@ jobs:
         if: matrix.app-dir != 'app-section-1'
         run: |
           pip install pytest
-          python -m pytest
+          pytest
         working-directory: ${{ matrix.app-dir }}
 
   test-windows:
@@ -48,4 +48,4 @@ jobs:
         if: matrix.app-dir != 'app-section-1'
         run: |
           pip install pytest
-          python -m pytest
+          pytest
