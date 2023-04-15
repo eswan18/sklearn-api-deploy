@@ -16,9 +16,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
+      - name: Install package
         run: |
-          pip install -r requirements.txt
+          pip install -e .
         working-directory: ${{ matrix.app-dir }}
       - name: Test with pytest
         if: matrix.app-dir != 'app-section-1'
@@ -42,7 +42,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install -e .
         working-directory: ${{ matrix.app-dir }}
       - name: Test with pytest
         if: matrix.app-dir != 'app-section-1'
