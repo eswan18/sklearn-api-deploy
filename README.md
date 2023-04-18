@@ -64,7 +64,7 @@ If the API server is running at `http://localhost:8000`, then the following shou
 {'flower_type': 0}
 ```
 
-# Poetry and `setup.cfg`
+## Poetry and `setup.cfg`
 
 I initially set up this full repository with Poetry, since it's what I use for application development, but each individual `app-section-N` folder is set up to be installed as a package with its own dependencies (`pip install -e .`) using a `setup.cfg` file.
 To dump the poetry requirements, you can run `poetry export --without-hashes --format=requirements.txt` but a little bit of format-massaging is required to get them in the right form for `setup.cfg`.
