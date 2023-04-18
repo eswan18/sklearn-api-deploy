@@ -8,15 +8,13 @@ from fastapi import FastAPI
 from .pydantic_models import Observation, Prediction
 
 
-MODEL_NAME = "iris_regression.pickle"
-
-
 def load_model(model_name: str) -> LogisticRegression:
     with importlib.resources.open_binary("app.models", model_name) as f:
         model = pickle.load(f)
     return model
 
 
+MODEL_NAME = "iris_regression.pickle"
 model = load_model(MODEL_NAME)
 app = FastAPI()
 
