@@ -1,6 +1,7 @@
 # sklearn-api-deploy
 
 Code examples for my PyCon tutorial, [*Building a Model Prediction Server*](https://us.pycon.org/2023/schedule/presentation/79/).
+Slides for that tutorial are [here](https://eswan18.github.io/sklearn-api-deploy-slides/sklearn-api-deploy.slides.html#/).
 
 ## How This Repo Is Organized
 
