@@ -64,12 +64,7 @@ If the API server is running at `http://localhost:8000`, then the following shou
 {'flower_type': 0}
 ```
 
-## Regenerating `requirements.txt`
+# Poetry and `setup.cfg`
 
-I use Poetry to manage this repository as a whole, but the individual app folders each have a `requirements.txt`. This is to avoid having to teach about Poetry as part of the talk, and to just have participants set up a simple virtual environment.
-
-To generate the `requirements.txt` from a poetry environment, use this line:
-
-```bash
-poetry export --without-hashes --format=requirements.txt > requirements.txt
-```
+I initially set up this full repository with Poetry, since it's what I use for application development, but each individual `app-section-N` folder is set up to be installed as a package with its own dependencies (`pip install -e .`) using a `setup.cfg` file.
+To dump the poetry requirements, you can run `poetry export --without-hashes --format=requirements.txt` but a little bit of format-massaging is required to get them in the right form for `setup.cfg`.
