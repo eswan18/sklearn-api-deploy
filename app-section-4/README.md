@@ -1,7 +1,7 @@
 # Iris Prediction API
 
 This repo contains an Iris prediction server.
-To get start the application, run:
+To start the application, run:
 ```
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
@@ -12,7 +12,7 @@ If the API server is running at `http://localhost:8000`, then the following shou
 ```text
 >>> import requests
 >>> response = requests.post(
-...     "http://localhost:8000/prediction",
+...     "http://localhost:8000/predict",
 ...     json={
 ...         "sepal_width": 1,
 ...         "sepal_length": 1,
