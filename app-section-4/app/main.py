@@ -18,6 +18,12 @@ MODEL_NAME = "iris_regression.pickle"
 model = load_model(MODEL_NAME)
 app = FastAPI()
 
+CLASS_FLOWER_MAPPING = {
+    0: 'setosa',
+    1: 'versicolor',
+    2: 'virginica',
+}
+
 
 @app.get("/")
 def status():
@@ -31,7 +37,7 @@ def predict(obs: Observation) -> Prediction:
     output_class_array = model.predict(obs.as_dataframe())
     # output_class_array is an array, but has only one element -- the prediction for our record.
     output_class = output_class_array[0]
-    flower_type = flower_type_from_class_num(output_class)
+    flower_type = CLASS_FLOWER_MAPPING[output_class]
     pred = Prediction(flower_type=flower_type)
     return pred
 
@@ -43,19 +49,7 @@ def batch_predict(batch: List[Observation]) -> List[Prediction]:
     df = pd.DataFrame(rows)
     output_classes = model.predict(df)
     preds = [
-        Prediction(flower_type=flower_type_from_class_num(output_class))
+        Prediction(flower_type=CLASS_FLOWER_MAPPING[output_class])
         for output_class in output_classes
     ]
     return preds
-
-
-def flower_type_from_class_num(class_num: int) -> str:
-    """Convert the class number to a flower type."""
-    if class_num == 0:
-        return "setosa"
-    elif class_num == 1:
-        return "versicolour"
-    elif class_num == 2:
-        return "virginica"
-    else:
-        raise ValueError(f"Unknown class number: {class_num}")

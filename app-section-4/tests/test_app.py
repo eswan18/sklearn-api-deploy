@@ -33,4 +33,4 @@ def test_predict(client: TestClient):
     )
     assert response.status_code == 201
     payload = response.json()
-    assert payload["flower_type"] == "versicolour"
+    assert payload["flower_type"] == "versicolor"

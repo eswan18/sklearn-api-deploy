@@ -15,4 +15,4 @@ class Observation(BaseModel):
 
 class Prediction(BaseModel):
     """A prediction of the species of a flower."""
-    flower_type: Literal["setosa", "versicolour", "virginica"]
+    flower_type: Literal["setosa", "versicolor", "virginica"]
