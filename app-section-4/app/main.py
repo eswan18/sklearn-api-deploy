@@ -32,11 +32,10 @@ def status():
 
 @app.post("/predict", status_code=201)
 def predict(obs: Observation) -> Prediction:
-    """Predict the flower type from the given observation."""
-    output_class_array = model.predict(obs.as_dataframe())
-    # output_class_array is an array, but has only one element -- the prediction for our record.
-    output_class = output_class_array[0]
-    flower_type = CLASS_FLOWER_MAPPING[output_class]
+    """For now, just return a dummy prediction."""
+    # .predict() gives us an array, but it has only one element
+    prediction = model.predict(obs.as_dataframe())[0]
+    flower_type = CLASS_FLOWER_MAPPING[prediction]
     pred = Prediction(flower_type=flower_type)
     return pred
 
