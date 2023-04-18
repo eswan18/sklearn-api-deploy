@@ -29,7 +29,6 @@ def status():
 def predict(obs: Observation) -> Prediction:
     """Predict the flower type from the given observation."""
     output_class_array = model.predict(obs.as_dataframe())
-    print(output_class_array)
     # output_class_array is an array, but has only one element -- the prediction for our record.
     output_class = output_class_array[0]
     flower_type = flower_type_from_class_num(output_class)
