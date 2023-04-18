@@ -34,11 +34,23 @@ You should get an md5 hash of `ca76ff2631132e4ec5841a2b798534ca`.
 You can see how this model was trained in the `notebooks/train_model.ipynb` notebook.
 There's nothing interesting in there and it's not meant to follow best practice; it's just a quick and dirty way to get a model we can use in our API.
 
-## The API
+## Running the server
 
 We deploy the model via a FastAPI server.
-To get start the application, run:
+Before we can run it, we need to install our "app" package that contains all the source code for our API.
+
+```bash
+cd app-section-4
+# Create and empty venv
+python3 -m venv venv
+# Activate the new venv
+source venv/bin/activate  # or `.\venv\Scripts\activate` on windows
+# Install our package and its dependencies
+pip install -e .
 ```
+
+Then to start the application, just run:
+```bash
 uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
